@@ -17,7 +17,7 @@ const altMaxProfit = (arr)=>{
     let profit = 0
 
     for(i = 0;i<arr.length-1;i++){
-        if(arr[i]<min){
+        if(arr[i] < min){
             min = arr[i]
         }
         if(arr[i+1]-min>profit){
