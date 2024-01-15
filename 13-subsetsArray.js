@@ -3,12 +3,21 @@ function subsets(arr){
     let temp = []
     recursiveSubsets(arr,0)
     function recursiveSubsets(arr,n){
-        if(n === arr.length) return res.push([...temp])
+        if(n === arr.length) return res.push([...temp].join())
         temp.push(arr[n])
         recursiveSubsets(arr,n+1)
         temp.pop()
         recursiveSubsets(arr,n+1)
     }
-    return res
+   
+    res.sort();
+    let ind =0
+    for(i = 1;i<res.length;i++){
+        if(res[ind] !== res[i]){
+            ind++;
+            res[ind] =res[i]
+        }
+    }
+    return ind+1
 }
-console.log(subsets("hello"))
+console.log(subsets("deed"))
